@@ -14,8 +14,66 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void	check_ft_atoi()
+{
+	printf("\nft_atoi test\n");
+	char *Str = "652.23brrt"; //Строка для преобразования
+   	int Num=0;                //Переменная для записи результата
+   	//Преобразование строки в число типа int
+   	Num = atoi (Str);
+   	printf ("%d\n",Num);
+}
+
+void	check_ft_strncmp()
+{
+	printf("\nft_strncmp test\n");
+	// Сравниваемые строки
+   	char str1[16]="1234567890";
+   	char str2[16]="1234507890";
+   	// Сравниваем первые пять символов двух строк
+   	if (ft_strncmp (str1, str2,5)==0)
+    	puts ("Первые пять символов строк идентичны");
+   	else
+    	puts ("Первые пять символов строк отличаются");
+
+}
+
+void	check_ft_strcmp()
+{
+	printf("\nft_strcmp test\n");
+	// Сравниваемые строки
+   	char str1[1024]="12345";
+   	char str2[1024]="12345";
+   	// Сравниваем две строки
+   	if (ft_strcmp (str1, str2)==0)
+    	printf ("Строки идентичны");
+   	else
+    	printf ("Строки отличаются");
+}
+
+void	check_ft_strnstr()
+{
+	printf("\nft_strnstr test\n");
+	// Массив со строкой для поиска
+   	char str1 [11]="0123456789";
+   	// Набор символов, которые должны входить в искомый сегмент
+   	char str2 [10]="345";
+	int k = 2;	
+	//копия, в которую будет занесен адрес первой найденной строки
+   	char *istr;
+   	//Поиск строки
+   	istr = ft_strnstr (str1,str2, k);
+   	//Вывод результата поиска на консоль
+   	if ( istr == NULL)
+    	printf ("Строка не найдена\n");
+   	else
+    	printf ("Искомая строка начинается с символа %ld\n",istr-str1+1);
+
+}
+
 void	check_ft_strstr()
 {
+	printf("\nft_strstr test\n");
 	// Массив со строкой для поиска
    	char str1 [11]="0123456789";
    	// Набор символов, которые должны входить в искомый сегмент
@@ -23,7 +81,7 @@ void	check_ft_strstr()
    	// Переменная, в которую будет занесен адрес первой найденной строки
    	char *istr;
    	//Поиск строки
-   	istr = strstr (str1,str2);
+   	istr = ft_strstr (str1,str2);
    	//Вывод результата поиска на консоль
    	if ( istr == NULL)
     	printf ("Строка не найдена\n");
@@ -34,6 +92,7 @@ void	check_ft_strstr()
 
 void	check_ft_strchr()
 {
+	printf("\nft_strchr test\n");
 	// Массив со строкой для поиска
    	char str [11]="0123456789";
    	// Код искомого символа
@@ -322,6 +381,11 @@ int		main(void)
 	check_ft_strncat();
 	check_ft_strlcat();
 	check_ft_strchr();
+	check_ft_strstr();
+	check_ft_strnstr();
+	check_ft_strcmp();
+	check_ft_strncmp();
+	check_ft_atoi();
 
 	return (0);
 }

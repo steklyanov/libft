@@ -31,5 +31,9 @@ char	*ft_strncat(char *dest, const char *append, size_t n);
 size_t  ft_strlcat(char *dst, const char *src, size_t n);
 char    *ft_strchr(const char *str, int ch);
 char    *ft_strstr(const char *str1, const char *str2);
+char    *ft_strnstr(const char *str1, const char *str2, size_t len);
+int     ft_strcmp(const char *str1, const char *str2);
+int     ft_strncmp(const char *str1, const char *str2, size_t n);
+int     ft_atoi(char *str);
 
 #endif

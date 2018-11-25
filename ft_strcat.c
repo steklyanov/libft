@@ -10,12 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strcat(char *destination, const char *append)
 {
 	int i;
 	int q;
 
 	i = 0;
+	q = 0;
 	while (destination[i])
 		i++;
 	while (append[q])
