@@ -1,30 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/26 19:46:40 by mmraz             #+#    #+#             */
+/*   Updated: 2018/11/26 19:48:55 by mmraz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int		ft_atoi(char *str)
 {
-	int	start;
-	int	i;
-	int	res;
-	int	negative;
+	int i;
+	int n;
+	int isneg;
 
-	start = 0;
-	while (str[start] != '\0' && (str[start] == ' ' || str[start] == '\t' ||
-			str[start] == '\r' || str[start] == '\n'))
-		start++;
-	i = start;
-	res = 0;
-	negative = 0;
-	while (str[i] != '\0' && ((str[i] >= '0' && str[i] <= '9') ||
-				(i == start && (str[i] == '-' || str[i] == '+'))))
-	{
-		if (str[i] == '-')
-			negative = 1;
-		if (str[i] >= '0' && str[i] <= '9')
-			res = (res * 10) + (str[i] - 48);
-		++i;
-	}
-	if (negative)
-		res *= -1;
-	return (res);
+	i = 0;
+	isneg = 0;
+	while (str[i] == ' ' || str[i] == '\n' || str[i] == '\t' ||
+		str[i] == '\v' || str[i] == '\r' || str[i] == '\f')
+		i++;
+	(str[i] == '-') ? isneg = 1 : isneg;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	n = 0;
+	while (ft_isdigit(str[i]))
+		n = n * 10 + (str[i++] - '0');
+	(isneg == 1) ? n = -n : n;
+	return (n);
 }

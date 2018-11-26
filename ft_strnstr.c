@@ -1,24 +1,35 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/26 11:47:23 by mmraz             #+#    #+#             */
+/*   Updated: 2018/11/26 19:52:30 by mmraz            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-char    *ft_strnstr(const char *str1, const char *str2, size_t len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t n)
 {
-    int i;
-    int j;
-    size_t copy_len;
+	int	i;
+	int	j;
 
-    copy_len = len;
-    i = 0;
-    j = 0;
-    while (str1[i++] != '\0')
-    {
-        if (str1[i] == str2[j])
-        {
-            j++;
-            if (str2[j] == '\0' || copy_len == 0)
-                return((char*)&str1[i -j]);
-        }
-        else
-            copy_len = len;
-    }
-    return (NULL);
+	i = 0;
+	j = 0;
+	if (to_find[0] == '\0')
+		return ((char *)&str[0]);
+	while (str[i] && to_find[j] && n--)
+	{
+		if (str[i] == to_find[j])
+			j++;
+		else
+			j = 0;
+		if (!to_find[j] && j != 0)
+			return ((char*)&str[i - --j]);
+		i++;
+	}
+	return (0);
 }

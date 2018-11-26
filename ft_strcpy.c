@@ -6,7 +6,7 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 20:43:39 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/22 20:59:37 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/11/26 19:50:41 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,14 @@
 
 char	*ft_strcpy(char *dest, const char *src)
 {
-	while (*src)
+	int	i;
+
+	i = 0;
+	while (src[i] != '\0')
 	{
-		*dest++ = *src++;
+		dest[i] = src[i];
+		i++;
 	}
+	dest[i] = src[i];
 	return (dest);
 }

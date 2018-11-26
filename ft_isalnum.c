@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 22:25:45 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/26 15:32:23 by mmraz            ###   ########.fr       */
+/*   Created: 2018/11/26 12:20:33 by mmraz             #+#    #+#             */
+/*   Updated: 2018/11/26 19:35:47 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *destination, const char *append)
+int		ft_isalnum(int c)
 {
-	int i;
-	int q;
-
-	i = 0;
-	q = 0;
-	while (destination[i])
-		i++;
-	while (append[q])
-	{
-		destination[i++] = append[q++];
-	}
-	destination[i] = '\0';
-	return (destination);
+	return (ft_isdigit(c) || ft_isalpha(c));
 }

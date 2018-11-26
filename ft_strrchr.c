@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 22:25:45 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/26 15:32:23 by mmraz            ###   ########.fr       */
+/*   Created: 2018/11/26 16:04:30 by mmraz             #+#    #+#             */
+/*   Updated: 2018/11/26 19:52:42 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strcat(char *destination, const char *append)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	int q;
+	int	len;
 
-	i = 0;
-	q = 0;
-	while (destination[i])
-		i++;
-	while (append[q])
+	len = ft_strlen((char *)s);
+	while (len != 0)
 	{
-		destination[i++] = append[q++];
+		if (s[len] == (char)c)
+			return ((char *)&s[len]);
+		len--;
 	}
-	destination[i] = '\0';
-	return (destination);
+	return (NULL);
 }

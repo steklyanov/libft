@@ -3,26 +3,29 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mmraz <marvin@42.fr>                       +#+  +:+       +#+         #
+#    By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 15:11:39 by mmraz             #+#    #+#              #
-#    Updated: 2018/11/21 15:32:54 by mmraz            ###   ########.fr        #
+#    Updated: 2018/11/26 12:53:36 by mmraz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=libft
-SRC=*.c
+NAME=libft.a
+SRCS=*.c
+OBJECTS=*.o
+INCLUDES=./
 
-all: create
+all: $(NAME)
 
-create:
-	gcc -o $(NAME)  $(SRC)
+$(NAME): $(SRCS) libft.h
+	@gcc -Wall -Wextra -Werror -I$(INCLUDES) -c $(SRCS)
+	@ar rc $(NAME) $(OBJECTS)
+	@ranlib $(NAME)
+
 clean:
-	/bin/rm -f *.o
+	@/bin/rm -f $(OBJECTS)
 
-fclean: 
-	clean
-	/bin/rm -f $(NAME)
+fclean: clean
+	@/bin/rm -f $(NAME)
 
-re: 
-	fclean all
+re: fclean all

@@ -6,13 +6,40 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 12:34:56 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/24 14:38:25 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/11/26 12:24:46 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+void	check_ft_isalnum()
+{
+	printf("\nft_isalnum test\n");
+	char c = 'C';
+   	if(ft_isalnum(c))
+    	printf("%c - alphanumeric\n",c);
+   	else
+    	printf("%c - isn't alphanumeric\n",c);
+}
+
+void	check_ft_isdigit()
+{
+	int k = 5;
+	char b = 'c';
+	printf("\nft_isdigit test\n");
+	printf("%d\n", ft_isdigit(k));
+	printf("%d\n", ft_isdigit(b));
+}
+
+void	check_ft_isalpha()
+{
+	printf("\nft_isalpha test\n");
+	printf("%d\n", ft_isalpha('q'));
+	printf("%d\n", ft_isalpha(10));
+	printf("%d\n", ft_isalpha('w'));
+}
 
 void	check_ft_atoi()
 {
@@ -386,6 +413,9 @@ int		main(void)
 	check_ft_strcmp();
 	check_ft_strncmp();
 	check_ft_atoi();
+	check_ft_isalpha();
+	check_ft_isdigit();
+	check_ft_isalnum();
 
 	return (0);
 }

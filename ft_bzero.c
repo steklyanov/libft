@@ -6,7 +6,7 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 13:17:03 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/22 16:47:57 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/11/26 19:49:05 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_bzero(void *b, size_t len)
 	unsigned char	*p;
 
 	p = (unsigned char*)b;
-	while(len > 0)
+	while (len > 0)
 	{
 		*p = 0;
 		len--;

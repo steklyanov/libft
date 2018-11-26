@@ -6,16 +6,16 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 11:23:15 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/23 17:10:38 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/11/26 19:51:47 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, const char *append, size_t n)
+char		*ft_strncat(char *dest, const char *append, size_t n)
 {
-	int i;
-	size_t q;
+	int		i;
+	size_t	q;
 
 	i = 0;
 	q = 0;
