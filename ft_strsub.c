@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 21:32:14 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/29 12:08:23 by mmraz            ###   ########.fr       */
+/*   Created: 2018/11/28 14:48:14 by mmraz             #+#    #+#             */
+/*   Updated: 2018/11/28 15:00:40 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dest, const char *source, size_t n)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	size_t	i;
+	char			*p;
+	size_t			i;
 
+	if ((p = malloc(len + 1)) == NULL)
+		return (NULL);
+	if (!s)
+		return (NULL);
 	i = 0;
-	while (i < n && source[i] != '\0')
+	while (len > 0)
 	{
-		dest[i] = source[i];
+		p[i] = s[start];
 		i++;
+		len--;
+		start++;
 	}
-	while (n > i)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	p[i] = '\0';
+	return (p);
 }

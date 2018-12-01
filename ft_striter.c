@@ -1,31 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 21:32:14 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/29 12:08:23 by mmraz            ###   ########.fr       */
+/*   Created: 2018/11/28 13:44:59 by mmraz             #+#    #+#             */
+/*   Updated: 2018/11/28 13:52:55 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dest, const char *source, size_t n)
+void	ft_striter(char *s, void (*f)(char*))
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (i < n && source[i] != '\0')
+	if (!s)
+		return ;
+	while (s[i] != '\0')
 	{
-		dest[i] = source[i];
+		f(&s[i]);
 		i++;
 	}
-	while (n > i)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
 }

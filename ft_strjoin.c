@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 21:32:14 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/29 12:08:23 by mmraz            ###   ########.fr       */
+/*   Created: 2018/11/28 15:00:54 by mmraz             #+#    #+#             */
+/*   Updated: 2018/11/28 15:35:06 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dest, const char *source, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	size_t	i;
+	unsigned int	len1;
+	char			*res;
 
-	i = 0;
-	while (i < n && source[i] != '\0')
-	{
-		dest[i] = source[i];
-		i++;
-	}
-	while (n > i)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	if (!s1 || !s2)
+		return (NULL);
+	len1 = ft_strlen(s1);
+	res = (char*)malloc(sizeof(*res) * (len1 + ft_strlen(s2) + 1));
+	if (!res)
+		return (NULL);
+	ft_strcpy(res, s1);
+	ft_strcat(res, s2);
+	return (res);
 }

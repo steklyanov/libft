@@ -1,31 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 21:32:14 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/29 12:08:23 by mmraz            ###   ########.fr       */
+/*   Created: 2018/11/29 10:55:46 by mmraz             #+#    #+#             */
+/*   Updated: 2018/11/29 19:58:05 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dest, const char *source, size_t n)
+char		*ft_itoa_base(int nbr)
 {
-	size_t	i;
+	int		len;
+	long	n_tmp;
+	char	*str;
 
-	i = 0;
-	while (i < n && source[i] != '\0')
+	if (nbr == -2147483648)
+		return ("-2147483648");
+	len = 0;
+	n_tmp = nbr;
+	while (n_tmp)
 	{
-		dest[i] = source[i];
-		i++;
+		n_tmp /= 10;
+		len += 1;
 	}
-	while (n > i)
+	if (nbr < 0)
 	{
-		dest[i] = '\0';
-		i++;
+		len += 1;
+		nbr *= -1;
 	}
-	return (dest);
+	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	str[len] = '\0';
+	while (nbr)
+	{
+		str[len] = (n_tmp % 10) + '0';
+		nbr /= 10;
+	}
+	return (str);
 }

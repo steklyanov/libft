@@ -6,13 +6,21 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 12:34:56 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/26 12:24:46 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/11/28 11:44:45 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 #include <stdlib.h>
+
+void	check_ft_strnew()
+{
+	printf("\nft_strnew test\n");
+	char	*p;
+	p = ft_strnew(10);
+	printf("%s", p);
+}
 
 void	check_ft_isalnum()
 {
@@ -85,7 +93,7 @@ void	check_ft_strnstr()
    	char str1 [11]="0123456789";
    	// Набор символов, которые должны входить в искомый сегмент
    	char str2 [10]="345";
-	int k = 2;	
+	int k = 2;
 	//копия, в которую будет занесен адрес первой найденной строки
    	char *istr;
    	//Поиск строки
@@ -215,7 +223,7 @@ void	check_ft_strcat()
 	char app[1024]="вторая строка ";
    	// Массив приемник данных
    	char dst[1024]="первая строка";
-   	// Добавляем строку из массива src в массив dst. 
+   	// Добавляем строку из массива src в массив dst.
    	ft_strcat (dst, app);
    	// Вывод массива dst на консоль
    	printf("dst: %s\n",dst);
@@ -236,14 +244,14 @@ void	check_ft_strncpy()
    	for (i=0;i < 10;i++)
     	printf (" %2d",(unsigned short) src[i]);
    	printf ("\n ");
-   	// Копируем строку длиною не более трех символов из массива src в массив dst1. 
+   	// Копируем строку длиною не более трех символов из массива src в массив dst1.
    	ft_strncpy(dst1, src,3);
    	// Вывод массива dst1 на консоль
   	printf ("dst1: ");
    	for (i=0;i<10;i++)
     	printf (" %2d",(unsigned short) dst1[i]);
    	printf ("\n");
-   	// Копируем строку длиною не более семи символов из массива src в массив dst2. 
+   	// Копируем строку длиною не более семи символов из массива src в массив dst2.
    	ft_strncpy(dst2, src,7);
    	// Вывод массива dst2 на консоль
    	printf ("dst2: ");
@@ -260,8 +268,8 @@ void	check_ft_strcpy()
    	// Массив приемник данных
    	char dst[1024] = "";
 
-   // Копируем строку из массива src в массив dst. Обратите внимание, 
-   //что скопируется только строка «первая строка\0». 
+   // Копируем строку из массива src в массив dst. Обратите внимание,
+   //что скопируется только строка «первая строка\0».
    ft_strcpy (dst, src);
    // Вывод массива src на консоль
    printf ("src: %s %s\n",src, &src[14]);
@@ -416,6 +424,8 @@ int		main(void)
 	check_ft_isalpha();
 	check_ft_isdigit();
 	check_ft_isalnum();
+	printf("\nft_strnew test prep\n");
+	check_ft_strnew();
 
 	return (0);
 }

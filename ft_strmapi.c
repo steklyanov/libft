@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 21:32:14 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/29 12:08:23 by mmraz            ###   ########.fr       */
+/*   Created: 2018/11/28 14:23:21 by mmraz             #+#    #+#             */
+/*   Updated: 2018/11/28 14:27:57 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strncpy(char *dest, const char *source, size_t n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	size_t	i;
+	unsigned int	index;
+	unsigned int	len;
+	char			*new;
 
-	i = 0;
-	while (i < n && source[i] != '\0')
+	if (!s)
+		return (NULL);
+	len = ft_strlen(s);
+	if ((new = malloc(len + 1)) == NULL)
+		return (NULL);
+	index = 0;
+	while (index < len)
 	{
-		dest[i] = source[i];
-		i++;
+		new[index] = f(index, s[index]);
+		index++;
 	}
-	while (n > i)
-	{
-		dest[i] = '\0';
-		i++;
-	}
-	return (dest);
+	new[index] = '\0';
+	return (new);
 }

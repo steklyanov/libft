@@ -6,12 +6,11 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/22 19:47:51 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/26 19:51:05 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/11/29 12:08:04 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char		*ft_strdup(const char *str)
 {
