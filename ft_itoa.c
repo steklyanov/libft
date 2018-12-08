@@ -6,39 +6,47 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 10:55:46 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/29 19:58:05 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/06 12:04:04 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_itoa_base(int nbr)
+static int	ft_intlen(int nbr)
 {
-	int		len;
-	long	n_tmp;
-	char	*str;
+	int len;
 
-	if (nbr == -2147483648)
-		return ("-2147483648");
 	len = 0;
-	n_tmp = nbr;
-	while (n_tmp)
+	len = (nbr <= 0 ? 1 : 0);
+	while (nbr != 0)
 	{
-		n_tmp /= 10;
-		len += 1;
+		nbr = nbr / 10;
+		len++;
 	}
-	if (nbr < 0)
-	{
-		len += 1;
-		nbr *= -1;
-	}
-	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
+	return (len);
+}
+
+char		*ft_itoa(int n)
+{
+	unsigned int	nbr;
+	int				sign;
+	int				len;
+	char			*alpha;
+
+	sign = (n < 0 ? 1 : 0);
+	alpha = NULL;
+	len = ft_intlen(n);
+	nbr = (n < 0 ? -n : n);
+	if (!(alpha = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
-	str[len] = '\0';
-	while (nbr)
+	alpha[len--] = '\0';
+	while (len >= 0)
 	{
-		str[len] = (n_tmp % 10) + '0';
-		nbr /= 10;
+		alpha[len] = nbr % 10 + '0';
+		nbr = nbr / 10;
+		len--;
 	}
-	return (str);
+	if (sign == 1)
+		alpha[0] = '-';
+	return (alpha);
 }

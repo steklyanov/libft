@@ -6,7 +6,7 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 09:52:45 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/29 15:08:28 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/06 11:10:57 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	get_wrds_cnt(char const *s, char c)
 {
-	int index;
-	int result;
+	int		index;
+	int		result;
 
 	index = 0;
 	result = 0;
@@ -31,9 +31,9 @@ static int	get_wrds_cnt(char const *s, char c)
 	return (result);
 }
 
-static char			*ft_strndup(const char *s, size_t n)
+static char	*ft_strndup(const char *s, size_t n)
 {
-	char			*str;
+	char	*str;
 
 	str = (char *)malloc(sizeof(char) * n + 1);
 	if (str == NULL)

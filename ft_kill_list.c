@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_kill_list.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/28 13:53:26 by mmraz             #+#    #+#             */
-/*   Updated: 2018/12/06 11:04:53 by mmraz            ###   ########.fr       */
+/*   Created: 2018/12/06 08:09:43 by mmraz             #+#    #+#             */
+/*   Updated: 2018/12/06 08:10:14 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void				ft_striteri(char *s, void (*f)(unsigned int, char*))
+void	ft_kill_list(t_list *lst)
 {
-	unsigned int	index;
-
-	if (!s)
-		return ;
-	index = 0;
-	while (s[index] != '\0')
+	while (lst)
 	{
-		f(index, &s[index]);
-		index++;
+		free(lst->content);
+		free(lst);
+		lst = lst->next;
 	}
 }
