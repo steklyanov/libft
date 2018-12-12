@@ -6,7 +6,7 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 19:19:16 by mmraz             #+#    #+#             */
-/*   Updated: 2018/12/05 19:37:00 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/07 12:14:52 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,10 @@ void	ft_lstdelone(t_list **alst, void (*del)(void*, size_t))
 {
 	if (!alst || !*alst)
 		return ;
-	del((*alst)->content, (*alst)->content_size);
+	if (del)
+	{
+		del((*alst)->content, (*alst)->content_size);
+	}
 	free(*alst);
 	*alst = NULL;
 }

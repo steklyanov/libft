@@ -6,7 +6,7 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 13:53:26 by mmraz             #+#    #+#             */
-/*   Updated: 2018/12/06 11:04:53 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/07 11:56:12 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void				ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	index;
 
-	if (!s)
+	if (!s || !f)
 		return ;
 	index = 0;
 	while (s[index] != '\0')

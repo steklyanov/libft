@@ -6,13 +6,13 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 19:46:40 by mmraz             #+#    #+#             */
-/*   Updated: 2018/12/06 10:26:44 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/10 17:29:41 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(char *str)
+int		ft_atoi(const char *str)
 {
 	int			i;
 	int			isneg;

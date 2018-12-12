@@ -6,7 +6,7 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 07:28:50 by mmraz             #+#    #+#             */
-/*   Updated: 2018/12/06 07:44:08 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/07 12:15:19 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
+	if (!lst || !f)
+		return ;
 	while (lst != NULL)
 	{
 		f(lst);

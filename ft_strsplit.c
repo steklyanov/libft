@@ -6,7 +6,7 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 09:52:45 by mmraz             #+#    #+#             */
-/*   Updated: 2018/12/06 11:10:57 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/10 18:55:59 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,19 @@ static char	*ft_strndup(const char *s, size_t n)
 	return (str);
 }
 
+static void	free_str(char **str)
+{
+	int		i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(*str);
+}
+
 char		**ft_strsplit(char const *s, char c)
 {
 	char	**result;
@@ -65,7 +78,8 @@ char		**ft_strsplit(char const *s, char c)
 		while (s[index] && s[index] != c)
 			index++;
 		if (index > j)
-			result[z++] = ft_strndup(s + j, index - j);
+			if (!(result[z++] = ft_strndup(s + j, index - j)))
+				free_str(result);
 	}
 	result[z] = 0;
 	return (result);

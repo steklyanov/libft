@@ -6,13 +6,13 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 12:34:16 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/26 19:37:54 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/07 12:08:20 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isprint(int ch)
+int		ft_isprint(int c)
 {
-	return (ch >= 32 && ch <= 126);
+	return (c >= 32 && c <= 126);
 }

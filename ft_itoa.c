@@ -6,21 +6,21 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/29 10:55:46 by mmraz             #+#    #+#             */
-/*   Updated: 2018/12/06 12:04:04 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/07 12:08:47 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_intlen(int nbr)
+static int	ft_intlen(int n)
 {
 	int len;
 
 	len = 0;
-	len = (nbr <= 0 ? 1 : 0);
-	while (nbr != 0)
+	len = (n <= 0 ? 1 : 0);
+	while (n != 0)
 	{
-		nbr = nbr / 10;
+		n = n / 10;
 		len++;
 	}
 	return (len);

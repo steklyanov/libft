@@ -6,13 +6,13 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 12:26:04 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/29 12:06:59 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/07 12:07:34 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isascii(int ch)
+int		ft_isascii(int c)
 {
-	return (ch >= 0 && ch <= 127);
+	return (c >= 0 && c <= 127);
 }

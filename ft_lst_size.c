@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lst_size.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 18:10:53 by mmraz             #+#    #+#             */
-/*   Updated: 2018/12/07 12:20:06 by mmraz            ###   ########.fr       */
+/*   Created: 2018/12/10 18:05:21 by mmraz             #+#    #+#             */
+/*   Updated: 2018/12/10 18:55:54 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int					ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_lst_size(t_list *begin_list)
 {
-	unsigned char	*c_arr1;
-	unsigned char	*c_arr2;
-	size_t			i;
+	t_list	*tmp;
+	int		count;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	c_arr1 = (unsigned char*)s1;
-	c_arr2 = (unsigned char*)s2;
-	while (*c_arr1 == *c_arr2 && ++i < n)
+	count = 0;
+	if (!begin_list)
+		return (count);
+	tmp = begin_list;
+	while (tmp)
 	{
-		c_arr1++;
-		c_arr2++;
+		tmp = tmp->next;
+		++count;
 	}
-	return ((int)*c_arr1 - *c_arr2);
+	return (count);
 }

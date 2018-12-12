@@ -6,7 +6,7 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 12:33:23 by mmraz             #+#    #+#             */
-/*   Updated: 2018/12/06 12:16:40 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/10 18:55:52 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,12 @@ typedef struct		s_list
 }					t_list;
 
 void				*ft_memset(void *b, int c, size_t len);
-void				ft_bzero(void *b, size_t len);
+void				ft_bzero(void *s, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t n);
-void				*ft_memccpy(void *dest,
-					const void *source, int c, size_t n);
+void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memmove(void *dist, const void *src, size_t len);
-void				*ft_memchr(const void *arr, int c, size_t n);
-int					ft_memcmp(const void *arr1, const void *arr2, size_t n);
+void				*ft_memchr(const void *s, int c, size_t n);
+int					ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t				ft_strlen(const char *str);
 char				*ft_strdup(const char *str);
 char				*ft_strcpy(char *dest, const char *src);
@@ -42,15 +41,16 @@ size_t				ft_strlcat(char *dst, const char *src, size_t n);
 char				*ft_strchr(const char *str, int ch);
 char				*ft_strrchr(const char *str, int ch);
 char				*ft_strstr(const char *str1, const char *str2);
-char				*ft_strnstr(const char *str1, const char *str2, size_t len);
+char				*ft_strnstr(const char *heystack, const char *needle,
+					size_t len);
 int					ft_strcmp(const char *str1, const char *str2);
 int					ft_strncmp(const char *str1, const char *str2, size_t n);
-int					ft_atoi(char *str);
+int					ft_atoi(const char *str);
 int					ft_isalpha(int ch);
-int					ft_isdigit(int ch);
+int					ft_isdigit(int c);
 int					ft_isalnum(int c);
-int					ft_isascii(int ch);
-int					ft_isprint(int ch);
+int					ft_isascii(int c);
+int					ft_isprint(int c);
 int					ft_toupper(int ch);
 int					ft_tolower(int ch);
 void				*ft_memalloc(size_t size);
@@ -84,5 +84,6 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 void				ft_kill_list(t_list *list);
+int					ft_lst_size(t_list *begin_list);
 
 #endif

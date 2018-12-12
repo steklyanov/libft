@@ -6,7 +6,7 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/06 06:55:32 by mmraz             #+#    #+#             */
-/*   Updated: 2018/12/06 09:55:49 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/07 12:11:58 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	ft_lstadd(t_list **alst, t_list *new)
 {
 	if (!new)
 		return ;
-	if (!alst)
-		return ;
 	new->next = *alst;
-	*(alst) = new;
+	*alst = new;
 }

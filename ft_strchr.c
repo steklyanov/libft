@@ -6,7 +6,7 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 17:14:24 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/26 19:50:15 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/10 17:29:27 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *str, int ch)
 {
 	while (*str != '\0')
 	{
-		if (*str == ch)
+		if (*str == (char)ch)
 			return ((char*)str);
 		str++;
 	}

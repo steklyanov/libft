@@ -6,13 +6,13 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/26 12:02:17 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/26 19:37:57 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/07 12:07:55 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isdigit(int ch)
+int		ft_isdigit(int c)
 {
-	return (ch >= '0' && ch <= '9');
+	return (c >= '0' && c <= '9');
 }

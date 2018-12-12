@@ -6,21 +6,21 @@
 /*   By: mmraz <mmraz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 13:17:03 by mmraz             #+#    #+#             */
-/*   Updated: 2018/11/26 19:49:05 by mmraz            ###   ########.fr       */
+/*   Updated: 2018/12/07 12:04:41 by mmraz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *b, size_t len)
+void	ft_bzero(void *s, size_t n)
 {
 	unsigned char	*p;
 
-	p = (unsigned char*)b;
-	while (len > 0)
+	p = (unsigned char*)s;
+	while (n > 0)
 	{
 		*p = 0;
-		len--;
+		n--;
 		p++;
 	}
 }
